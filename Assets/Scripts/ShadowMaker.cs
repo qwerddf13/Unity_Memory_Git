@@ -6,22 +6,17 @@ public class ShadowMaker : MonoBehaviour
 {
     void Start()
     {
-        CreateShadow();
+        CreateShadow(gameObject);
     }
 
-    void CreateShadow()
+    void CreateShadow(GameObject target)
     {
-        GameObject shadow = new GameObject("Shadow");
-        shadow.transform.parent = transform;
-        shadow.transform.localPosition = new Vector2(transform.localPosition.x, -1); // 살짝 아래로
-
-        SpriteRenderer originalSR = GetComponent<SpriteRenderer>();
-        SpriteRenderer shadowSR = shadow.AddComponent<SpriteRenderer>();
-
-        shadowSR.sprite = originalSR.sprite;
-        shadowSR.sortingLayerID = originalSR.sortingLayerID;
-        shadowSR.sortingOrder = originalSR.sortingOrder - 1; // 본체보다 뒤에 그리기
-
-        shadowSR.color = new Color(0f, 0f, 0f, 0.5f); // 검정색 + 반투명
+        GameObject shadow = Instantiate(target, target.transform.position, target.transform.rotation, target.transform);
+    
+        SpriteRenderer sr = shadow.GetComponent<SpriteRenderer>();
+        sr.color = new Color(0f, 0f, 0f, 0.5f); // 반투명 검은색
+        shadow.transform.localPosition += new Vector3(0.1f, -0.1f, 0f); // 살짝 아래/뒤로
+        shadow.transform.localScale = new Vector3(1f, 0.9f, 1f); // 약간 찌그러트림
+        shadow.name = "Shadow";
     }
 }
