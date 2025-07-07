@@ -9,9 +9,9 @@ using UnityEngine.UIElements;
 public class Card : MonoBehaviour
 {
     SpriteRenderer spriteRenderer;
-    GameObject spawner;
+    GameObject spawner, shuffler;
     public int cardNum;
-    int cardSpriteNum;
+    public int cardSpriteNum;
     public int allCardAmount;
 
     public int myGridNum_x = 0; // 0 - 3
@@ -25,7 +25,6 @@ public class Card : MonoBehaviour
     public Sprite[] sprites;
     void Awake()
     {
-        
         spriteRenderer = GetComponent<SpriteRenderer>();
         awakeScale = transform.transform.localScale;
         transform.position = transform.position;
@@ -39,7 +38,6 @@ public class Card : MonoBehaviour
         myGridNum_y = (cardNum - 1) / 4;
 
         isCanClick = true;
-
     }
     void Start()
     {
@@ -52,6 +50,13 @@ public class Card : MonoBehaviour
     }
     void LateUpdate()
     {
+        if (Input.GetKeyDown(KeyCode.RightShift))
+        {
+            List<int> shuffledList = GameObject.Find("CardShufflerOb").GetComponent<ShuffleScript>().shuffledList;
+            cardNum = shuffledList[cardNum - 1];
+            myGridNum_x = (cardNum - 1) % 4;
+            myGridNum_y = (cardNum - 1) / 4;
+        }
         SortCard();
     }
     void OnMouseOver()
@@ -91,9 +96,9 @@ public class Card : MonoBehaviour
         lastRow = (allCardAmount - 1) / 4;
         lastRowAmount = allCardAmount % 4;
         if (myGridNum_y >= lastRow && lastRowAmount > 0)
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(myGridNum_x * gridPadding_x - 9 + (lastRowAmount - 1) * -2, myGridNum_y * -gridPadding_y + lastRow * 2.5f), 50 * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(myGridNum_x * gridPadding_x - 9 + (lastRowAmount - 1) * -2, myGridNum_y * -gridPadding_y + lastRow * 2.5f), 100 * Time.deltaTime);
         else
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(myGridNum_x * gridPadding_x - 15, myGridNum_y * -gridPadding_y + lastRow * 2.5f), 50 * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(myGridNum_x * gridPadding_x - 15, myGridNum_y * -gridPadding_y + lastRow * 2.5f), 100 * Time.deltaTime);
     }
     IEnumerator flipCard()
     {
@@ -123,5 +128,20 @@ public class Card : MonoBehaviour
         isCanClick = true;
 
         yield break;
+    }
+    void OnEnable()
+    {
+        GameManager.OnResetAll += ResetValues;
+    }
+
+    void OnDisable()
+    {
+        GameManager.OnResetAll -= ResetValues;
+    }
+
+    void ResetValues()
+    {
+        Debug.Log("카드가 리셋으로 인해 삭제됨");
+        Destroy(gameObject);
     }
 }
