@@ -32,14 +32,10 @@ public class ShuffleScript : MonoBehaviour
         {
             numbers.Add(i);
         }
-
-        Debug.Log("원본 리스트: " + string.Join(", ", numbers));
-
         // 3. Fisher-Yates 셔플
         Shuffle(numbers);
 
-        // 4. 결과 출력
-        Debug.Log("셔플된 리스트: " + string.Join(", ", numbers));
+        Debug.Log("카드 셔플됨");
 
         return numbers;
     }
