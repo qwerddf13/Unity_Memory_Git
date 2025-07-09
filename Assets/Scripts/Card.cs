@@ -9,7 +9,8 @@ using UnityEngine.UIElements;
 public class Card : MonoBehaviour
 {
     SpriteRenderer spriteRenderer;
-    GameObject spawner, shuffler;
+    GameObject spawner;
+    public ScoreManage scoreManage;
     public int cardNum;
     public int cardSpriteNum;
     public int allCardAmount;
@@ -23,6 +24,8 @@ public class Card : MonoBehaviour
     Vector2 awakeScale;
     public bool isCanClick;
     public Sprite[] sprites;
+
+    public List<int> shuffledList;
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -33,6 +36,10 @@ public class Card : MonoBehaviour
         spawner = GameObject.Find("ObjectSpawner");
         cardNum = spawner.GetComponent<ObjectMaker>().toSetCardNum;
         cardSpriteNum = spawner.GetComponent<ObjectMaker>().spawnSpriteNum;
+
+        scoreManage = GameObject.Find("GameManager").GetComponent<ScoreManage>();
+
+        shuffledList = GameObject.Find("CardShufflerOb").GetComponent<ShuffleScript>().shuffledList;
 
         myGridNum_x = (cardNum - 1) % 4;
         myGridNum_y = (cardNum - 1) / 4;
@@ -52,7 +59,6 @@ public class Card : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightShift))
         {
-            List<int> shuffledList = GameObject.Find("CardShufflerOb").GetComponent<ShuffleScript>().shuffledList;
             cardNum = shuffledList[cardNum - 1];
             myGridNum_x = (cardNum - 1) % 4;
             myGridNum_y = (cardNum - 1) / 4;
@@ -68,18 +74,19 @@ public class Card : MonoBehaviour
     }
     void OnMouseDown()
     {
-        Debug.Log("down");
+        Debug.Log("카드에 마우스를 누름");
     }
     void OnMouseUpAsButton()
     {
         if (isCanClick == true)
         {
-            Debug.Log("uppp");
+            Debug.Log("카드에서 마우스를 떼어서 클릭됨");
+            scoreManage.ReceiveCardNum(cardSpriteNum);
             StartCoroutine(flipCard());
         }
         else
         {
-            Debug.Log("Noyou");
+            Debug.Log("카드 클릭 거부됨");
         }
 
     }
