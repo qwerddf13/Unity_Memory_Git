@@ -4,16 +4,16 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ChanceText : MonoBehaviour
+public class ChanceScript : MonoBehaviour
 {
     public TMP_Text chanceText;
-    public int bigChance = 4;
-    public int smallChance = 2; // 0 - 2
+    public int bigChance, smallChance;
+
     void Start()
     {
-        
+        smallChance = 2;
+        bigChance = 4;
     }
-
     void Update()
     {
         if (smallChance == 0)

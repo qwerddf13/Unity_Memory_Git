@@ -22,10 +22,29 @@ public class ObjectMaker : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            SpawnCard(1);
-        }
+        //if (Input.GetKeyDown(KeyCode.Return))
+        //{
+          //  SpawnCard(1);
+        //}
+    }
+
+    void OnEnable()
+    {
+        GameManage.OnResetAll += ResetValues;
+        DeckManage.OnMakeCards += SpawnDeck;
+    }
+
+    void OnDisable()
+    {
+        GameManage.OnResetAll -= ResetValues;
+        DeckManage.OnMakeCards -= SpawnDeck;
+    }
+    void SpawnDeck(List<int> deck)
+    {
+        Debug.Log("덱 생성됨: " + deck);
+        for (int i = 0; i < deck.Count; i++)
+            SpawnCard(deck[i]);
+            //덱 이상
     }
     void SpawnCard(int cardspriteNum)
     {
@@ -33,18 +52,8 @@ public class ObjectMaker : MonoBehaviour
         toSetCardNum++;
         spawnSpriteNum = cardspriteNum;
         Instantiate(cardPrefab);
-        Debug.Log("카드 생성됨.");
+        Debug.Log("카드 생성됨: " + cardspriteNum);
     }
-    void OnEnable()
-    {
-        GameManager.OnResetAll += ResetValues;
-    }
-
-    void OnDisable()
-    {
-        GameManager.OnResetAll -= ResetValues;
-    }
-
     void ResetValues()
     {
         allCardAmount = 0;

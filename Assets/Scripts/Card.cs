@@ -9,7 +9,7 @@ using UnityEngine.UIElements;
 public class Card : MonoBehaviour
 {
     SpriteRenderer spriteRenderer;
-    GameObject spawner;
+    [SerializeField] GameObject spawner;
     public ScoreManage scoreManage;
     public int cardNum;
     public int cardSpriteNum;
@@ -22,7 +22,7 @@ public class Card : MonoBehaviour
     float gridPadding_x = 4, gridPadding_y = 5; //4, 5
 
     Vector2 awakeScale;
-    public bool isCanClick;
+    public bool isCanClick, isFlipedOpen;
     public Sprite[] sprites;
 
     public List<int> shuffledList;
@@ -37,9 +37,7 @@ public class Card : MonoBehaviour
         cardNum = spawner.GetComponent<ObjectMaker>().toSetCardNum;
         cardSpriteNum = spawner.GetComponent<ObjectMaker>().spawnSpriteNum;
 
-        scoreManage = GameObject.Find("GameManager").GetComponent<ScoreManage>();
-
-        shuffledList = GameObject.Find("CardShufflerOb").GetComponent<ShuffleScript>().shuffledList;
+        scoreManage = GameObject.Find("GameManage").GetComponent<ScoreManage>();
 
         myGridNum_x = (cardNum - 1) % 4;
         myGridNum_y = (cardNum - 1) / 4;
@@ -50,7 +48,6 @@ public class Card : MonoBehaviour
     {
 
     }
-
     void Update()
     {
 
@@ -59,6 +56,7 @@ public class Card : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightShift))
         {
+            shuffledList = GameObject.Find("CardShufflerOb").GetComponent<ShuffleScript>().shuffledList;
             cardNum = shuffledList[cardNum - 1];
             myGridNum_x = (cardNum - 1) % 4;
             myGridNum_y = (cardNum - 1) / 4;
@@ -81,7 +79,7 @@ public class Card : MonoBehaviour
         if (isCanClick == true)
         {
             Debug.Log("카드에서 마우스를 떼어서 클릭됨");
-            scoreManage.ReceiveCardNum(cardSpriteNum);
+            scoreManage.ReceiveSelectedCardNum(cardSpriteNum);
             StartCoroutine(flipCard());
         }
         else
@@ -117,9 +115,15 @@ public class Card : MonoBehaviour
         }
 
         if (spriteRenderer.sprite == sprites[0])
+        {
             spriteRenderer.sprite = sprites[cardSpriteNum];
+            isFlipedOpen = true;
+        }
         else
+        {
             spriteRenderer.sprite = sprites[0];
+            isFlipedOpen = false;
+        }
 
         for (int i = 0; i < 9; i++)
         {
@@ -131,24 +135,30 @@ public class Card : MonoBehaviour
         transform.localScale = new Vector2(awakeScale.x, awakeScale.y);
         yield return new WaitForSeconds(0.2f);
 
-        GameObject.Find("ChanceText").GetComponent<ChanceText>().smallChance--; // not clear
-        isCanClick = true;
+        GameObject.Find("ChanceText").GetComponent<ChanceScript>().smallChance--; // not clear
 
         yield break;
     }
     void OnEnable()
     {
-        GameManager.OnResetAll += ResetValues;
+        GameManage.OnResetAll += ResetValues;
+        ScoreManage.OnCheckCard += CheckAndBindCard;
     }
-
     void OnDisable()
     {
-        GameManager.OnResetAll -= ResetValues;
+        GameManage.OnResetAll -= ResetValues;
+        ScoreManage.OnCheckCard -= CheckAndBindCard;
     }
-
     void ResetValues()
     {
         Debug.Log("카드가 리셋으로 인해 삭제됨");
         Destroy(gameObject);
+    }
+    void CheckAndBindCard()
+    {
+        if (isFlipedOpen == true)
+            isCanClick = false;
+        else
+            isCanClick = true;
     }
 }

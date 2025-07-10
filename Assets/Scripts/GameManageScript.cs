@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManage : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
         }
     }
     public static event Action OnResetAll;
-
     public void EndGame()
     {
         Debug.Log("게임 종료. 리셋 시작");
