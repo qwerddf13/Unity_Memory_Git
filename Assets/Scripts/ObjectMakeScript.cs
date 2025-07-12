@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 
@@ -31,21 +32,30 @@ public class ObjectMaker : MonoBehaviour
     void OnEnable()
     {
         GameManage.OnResetAll += ResetValues;
-        DeckManage.OnMakeCards += SpawnDeck;
+        DeckManage.OnMakeCards += DoCoroutine;
     }
 
     void OnDisable()
     {
         GameManage.OnResetAll -= ResetValues;
-        DeckManage.OnMakeCards -= SpawnDeck;
+        DeckManage.OnMakeCards -= DoCoroutine;
     }
-    void SpawnDeck(List<int> deck)
+    void DoCoroutine(List<int> forDoList)
     {
-        Debug.Log("덱 생성됨: " + deck);
-        for (int i = 0; i < deck.Count; i++)
-            SpawnCard(deck[i]);
-            //덱 이상
+        StartCoroutine(SpawnDeck(forDoList));
     }
+    IEnumerator SpawnDeck(List<int> deck)
+    {
+        Debug.Log("덱 생성됨: " + string.Join(",", deck));
+        for (int i = 0; i < deck.Count; i++)
+        {
+            SpawnCard(deck[i]);
+            yield return new WaitForSeconds(0.1f);
+
+        }
+        yield break;
+    }
+
     void SpawnCard(int cardspriteNum)
     {
         allCardAmount++;

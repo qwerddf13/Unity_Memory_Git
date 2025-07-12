@@ -26,7 +26,7 @@ public class Card : MonoBehaviour
     public Sprite[] sprites;
 
     public List<int> shuffledList;
-    void Awake()
+    void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         awakeScale = transform.transform.localScale;
@@ -37,16 +37,12 @@ public class Card : MonoBehaviour
         cardNum = spawner.GetComponent<ObjectMaker>().toSetCardNum;
         cardSpriteNum = spawner.GetComponent<ObjectMaker>().spawnSpriteNum;
 
-        scoreManage = GameObject.Find("GameManage").GetComponent<ScoreManage>();
+        scoreManage = GameObject.Find("GameManager").GetComponent<ScoreManage>();
 
         myGridNum_x = (cardNum - 1) % 4;
         myGridNum_y = (cardNum - 1) / 4;
 
         isCanClick = true;
-    }
-    void Start()
-    {
-
     }
     void Update()
     {
@@ -79,6 +75,7 @@ public class Card : MonoBehaviour
         if (isCanClick == true)
         {
             Debug.Log("카드에서 마우스를 떼어서 클릭됨");
+            Debug.Log(cardSpriteNum);
             scoreManage.ReceiveSelectedCardNum(cardSpriteNum);
             StartCoroutine(flipCard());
         }

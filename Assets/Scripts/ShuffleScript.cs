@@ -34,7 +34,7 @@ public class ShuffleScript : MonoBehaviour
         }
         // 3. Fisher-Yates 셔플
 
-        Debug.Log("원본 리스트: " + shuffledList);
+        Debug.Log("원본 리스트: " + string.Join(",",shuffledList));
         Shuffle(numbers);
 
         Debug.Log("카드 셔플됨");
