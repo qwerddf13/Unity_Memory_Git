@@ -52,6 +52,7 @@ public class ChanceScript : MonoBehaviour
         maxSelect2 = scoreManage.maxSelect;
         bigChance = 4;
         smallChance = maxSelect2;
+        chanceText.text = $"Chance: {bigChance}";
         Debug.Log("Chance 텍스트 리셋됨.");
     }
 }
