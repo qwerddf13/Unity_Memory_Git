@@ -709,8 +709,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chanceText: {fileID: 1707890901}
+  scoreManage: {fileID: 128992499}
   bigChance: 4
   smallChance: 2
+  maxSelect2: 0
 --- !u!114 &1707890901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -863,8 +865,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 494134747}
+  - {fileID: 128992497}
   - {fileID: 1831522048}
   - {fileID: 633044305}
   - {fileID: 920752865}
   - {fileID: 1152729858}
-  - {fileID: 128992497}

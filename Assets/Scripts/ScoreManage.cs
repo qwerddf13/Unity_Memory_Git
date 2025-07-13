@@ -31,15 +31,20 @@ public class ScoreManage : MonoBehaviour
     public void CheckAndScore()
     {
         Debug.Log("검사된 카드: " + string.Join(", ", selectedCardNum));
-        OnCheckCard?.Invoke(); // 두 개 뒤집히면 무조건 검사
+
         if (selectedCardNum[0] == selectedCardNum[1])
         {
             score++;
-            Debug.Log("점수: " + score);
-            selectedCardNum.Clear();
+            OnCheckCard?.Invoke(true); // 짝 맞으면 true, 짝 안 맞으면 false
         }
+        else
+        {
+            OnCheckCard?.Invoke(false);
+        }
+        Debug.Log("점수: " + score);
+        selectedCardNum.Clear();
     }
-    public static event Action OnCheckCard;
+    public static event Action<bool> OnCheckCard;
     void OnEnable()
     {
         GameManage.OnResetAll += ResetValues;

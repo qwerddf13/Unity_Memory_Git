@@ -11,11 +11,6 @@ public class ObjectMaker : MonoBehaviour
     public int toSetCardNum = 0;
     public int allCardAmount = 0;
     public int spawnSpriteNum = 1;
-
-    void Awake()
-    {
-
-    }
     void Start()
     {
 
@@ -23,10 +18,7 @@ public class ObjectMaker : MonoBehaviour
 
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Return))
-        //{
-          //  SpawnCard(1);
-        //}
+
     }
 
     void OnEnable()

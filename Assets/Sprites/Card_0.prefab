@@ -143,11 +143,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b64504b3720124eb905cf09aa9083e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 2941598834081072517}
+  spawner: {fileID: 0}
+  scoreManage: {fileID: 0}
   cardNum: 0
+  cardSpriteNum: 0
   allCardAmount: 0
   myGridNum_x: 0
   myGridNum_y: 0
   isCanClick: 1
+  isFlipedOpen: 0
   sprites:
   - {fileID: -183105210, guid: 70c23ea57638ecf4f91fefa201a0bf04, type: 3}
   - {fileID: -1001531210, guid: 70c23ea57638ecf4f91fefa201a0bf04, type: 3}
@@ -155,3 +160,4 @@ MonoBehaviour:
   - {fileID: -396941126, guid: 70c23ea57638ecf4f91fefa201a0bf04, type: 3}
   - {fileID: 339709963, guid: 70c23ea57638ecf4f91fefa201a0bf04, type: 3}
   - {fileID: 1350550181, guid: 70c23ea57638ecf4f91fefa201a0bf04, type: 3}
+  shuffledList: 

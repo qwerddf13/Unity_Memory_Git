@@ -8,27 +8,23 @@ using UnityEngine.UIElements;
 
 public class Card : MonoBehaviour
 {
-    SpriteRenderer spriteRenderer;
+    [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] GameObject spawner;
     public ScoreManage scoreManage;
-    public int cardNum;
-    public int cardSpriteNum;
-    public int allCardAmount;
 
+    public int cardNum, cardSpriteNum, allCardAmount;
     public int myGridNum_x = 0; // 0 - 3
     public int myGridNum_y = 0; // 0 - 3
-    int lastRow;
-    int lastRowAmount;
+    int lastRow, lastRowAmount;
     float gridPadding_x = 4, gridPadding_y = 5; //4, 5
 
     Vector2 awakeScale;
-    public bool isCanClick, isFlipedOpen;
+    public bool isCanClick, isFlipedOpen, isMatched;
     public Sprite[] sprites;
 
     public List<int> shuffledList;
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
         awakeScale = transform.transform.localScale;
         transform.position = transform.position;
         transform.localScale = transform.localScale;
@@ -46,7 +42,10 @@ public class Card : MonoBehaviour
     }
     void Update()
     {
-
+        if (isCanClick == true)
+            ChangeColor(1, 1, 1, 1);
+        else
+            ChangeColor(0.8f, 0.8f, 0.8f, 1);
     }
     void LateUpdate()
     {
@@ -76,8 +75,7 @@ public class Card : MonoBehaviour
         {
             Debug.Log("카드에서 마우스를 떼어서 클릭됨");
             Debug.Log(cardSpriteNum);
-            scoreManage.ReceiveSelectedCardNum(cardSpriteNum);
-            StartCoroutine(flipCard());
+            StartCoroutine(FlipCardCoroutine()); // 이거 안에 쓸데없이 기능이 많음
         }
         else
         {
@@ -102,7 +100,11 @@ public class Card : MonoBehaviour
         else
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(myGridNum_x * gridPadding_x - 15, myGridNum_y * -gridPadding_y + lastRow * 2.5f), 100 * Time.deltaTime);
     }
-    IEnumerator flipCard()
+    void ChangeColor(float r, float g, float b, float alpha)
+    {
+        spriteRenderer.color = new Color(r, g, b, alpha);
+    }
+    IEnumerator FlipCardCoroutine()
     {
         isCanClick = false;
         for (int i = 0; i < 9; i++)
@@ -132,10 +134,20 @@ public class Card : MonoBehaviour
         transform.localScale = new Vector2(awakeScale.x, awakeScale.y);
         yield return new WaitForSeconds(0.2f);
 
-        GameObject.Find("ChanceText").GetComponent<ChanceScript>().smallChance--; // not clear
+        if (isFlipedOpen == true)
+        {
+            isCanClick = false;
+            OnCardClicked?.Invoke();
+            scoreManage.ReceiveSelectedCardNum(cardSpriteNum);
+        }
+        else
+        {
+            isCanClick = true;
+        }
 
         yield break;
     }
+    public static event Action OnCardClicked;
     void OnEnable()
     {
         GameManage.OnResetAll += ResetValues;
@@ -151,11 +163,22 @@ public class Card : MonoBehaviour
         Debug.Log("카드가 리셋으로 인해 삭제됨");
         Destroy(gameObject);
     }
-    void CheckAndBindCard()
+    void CheckAndBindCard(bool isPair)
     {
-        if (isFlipedOpen == true)
-            isCanClick = false;
+        if (isPair == true)
+        {
+            if (isFlipedOpen == true)
+            {
+                isMatched = true;
+                isCanClick = false;
+            }
+        }
         else
-            isCanClick = true;
+        {
+            if (isMatched == false && isFlipedOpen == true)
+            {
+                StartCoroutine(FlipCardCoroutine());
+            }
+        }
     }
 }
