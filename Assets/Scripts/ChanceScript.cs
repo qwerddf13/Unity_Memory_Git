@@ -25,25 +25,29 @@ public class ChanceScript : MonoBehaviour
     void OnEnable()
     {
         GameManage.OnResetAll += ResetValues;
-        Card.OnCardClicked += UseSmallChance;
-        ScoreManage.OnCheckCard += UseBigChance;
+        Card.OnCardClicked += LoseSmallChance;
+        ScoreManage.OnCheckCard += LoseBigChance;
+        ScoreManage.OnAnimateCard += WriteBigChance;
     }
     void OnDisable()
     {
         GameManage.OnResetAll -= ResetValues;
-        Card.OnCardClicked -= UseSmallChance;
-        ScoreManage.OnCheckCard -= UseBigChance;
+        Card.OnCardClicked -= LoseSmallChance;
+        ScoreManage.OnCheckCard -= LoseBigChance;
     }
-    void UseSmallChance() // 쓸모없음
+    void LoseSmallChance() // 쓸모없음
     {
         smallChance--;
     }
-    void UseBigChance(bool isPair)
+    void LoseBigChance(bool isPair)
     {
         if (isPair == false)
         {
             bigChance--;
         }
+    }
+    void WriteBigChance(bool _)
+    {
         chanceText.text = $"Chance: {bigChance}";
     }
 

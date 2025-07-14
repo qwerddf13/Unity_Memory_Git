@@ -9,6 +9,7 @@ public class ScoreManage : MonoBehaviour
 {
     public int maxSelect, score;
     public List<int> selectedCardNum;
+    public bool isMatched_Score;
     void Start()
     {
         maxSelect = 2;
@@ -26,6 +27,7 @@ public class ScoreManage : MonoBehaviour
         if (selectedCardNum.Count == maxSelect)
         {
             CheckAndScore();
+            Invoke("AnimateCard", 1f);
         }
     }
     public void CheckAndScore()
@@ -35,16 +37,31 @@ public class ScoreManage : MonoBehaviour
         if (selectedCardNum[0] == selectedCardNum[1])
         {
             score++;
-            OnCheckCard?.Invoke(true); // 짝 맞으면 true, 짝 안 맞으면 false
+            OnCheckCard?.Invoke(true);
+            isMatched_Score = true; // 짝 맞으면 true, 짝 안 맞으면 false
         }
         else
         {
             OnCheckCard?.Invoke(false);
+            isMatched_Score = false;
         }
         Debug.Log("점수: " + score);
         selectedCardNum.Clear();
     }
+    void AnimateCard()
+    {
+        if (isMatched_Score == true)
+        {
+            OnAnimateCard?.Invoke(true);
+        }
+        else
+        {
+            OnAnimateCard?.Invoke(false);
+        }
+    }
+
     public static event Action<bool> OnCheckCard;
+    public static event Action<bool> OnAnimateCard;
     void OnEnable()
     {
         GameManage.OnResetAll += ResetValues;
