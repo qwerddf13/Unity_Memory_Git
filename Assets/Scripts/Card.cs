@@ -120,10 +120,6 @@ public class Card : MonoBehaviour
             OnCardClicked?.Invoke();
             scoreManage.ReceiveSelectedCardNum(cardSpriteNum);
         }
-        else
-        {
-            isCanClick = true;
-        }
     }
     IEnumerator DoFlipCard()
     {
@@ -137,12 +133,10 @@ public class Card : MonoBehaviour
         if (spriteRenderer.sprite == sprites[0])
         {
             spriteRenderer.sprite = sprites[cardSpriteNum];
-            isFlipedOpen = true;
         }
         else
         {
             spriteRenderer.sprite = sprites[0];
-            isFlipedOpen = false;
         }
 
         for (int i = 0; i < 9; i++)
@@ -155,7 +149,10 @@ public class Card : MonoBehaviour
         transform.localScale = new Vector2(awakeScale.x, awakeScale.y);
         yield return new WaitForSeconds(0.2f);
 
-        OnEndAnimate?.Invoke();
+        if (isFlipedOpen == false)
+        {
+            OnEndAnimate?.Invoke();
+        }
 
         yield break;
     }
