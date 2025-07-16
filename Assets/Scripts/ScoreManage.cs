@@ -53,6 +53,7 @@ public class ScoreManage : MonoBehaviour
         if (isMatched_Score == true)
         {
             OnAnimateCard?.Invoke(true);
+            OnPlusScore?.Invoke();
         }
         else
         {
@@ -62,6 +63,7 @@ public class ScoreManage : MonoBehaviour
 
     public static event Action<bool> OnCheckCard;
     public static event Action<bool> OnAnimateCard;
+    public static event Action OnPlusScore;
     void OnEnable()
     {
         GameManage.OnResetAll += ResetValues;

@@ -23,13 +23,13 @@ public class ScoreText : MonoBehaviour
     void OnEnable()
     {
         GameManage.OnResetAll += ResetValues;
-        Card.OnEndAnimate += WriteScore;
+        ScoreManage.OnPlusScore += WriteScore;
     }
 
     void OnDisable()
     {
         GameManage.OnResetAll -= ResetValues;
-        Card.OnEndAnimate -= WriteScore;
+        ScoreManage.OnPlusScore -= WriteScore;
     }
 
     void WriteScore()

@@ -76,13 +76,12 @@ public class Card : MonoBehaviour
         {
             Debug.Log("카드에서 마우스를 떼어서 클릭됨");
             Debug.Log(cardSpriteNum);
-            StartCoroutine(DoFlipCard()); // 이거 안에 쓸데없이 기능이 많음
+            StartCoroutine(DoFlipCard());
         }
         else
         {
             Debug.Log("카드 클릭 거부됨");
         }
-
     }
     void OnMouseExit()
     {
@@ -126,7 +125,7 @@ public class Card : MonoBehaviour
         BeforeFlipCard();
         for (int i = 0; i < 9; i++)
         {
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.02f);
             transform.localScale = new Vector2(transform.localScale.x - 1, transform.localScale.y);
         }
 
@@ -141,13 +140,13 @@ public class Card : MonoBehaviour
 
         for (int i = 0; i < 9; i++)
         {
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.02f);
             transform.localScale = new Vector2(transform.localScale.x + 1, transform.localScale.y);
         }
 
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.02f);
         transform.localScale = new Vector2(awakeScale.x, awakeScale.y);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.3f);
 
         if (isFlipedOpen == false)
         {
