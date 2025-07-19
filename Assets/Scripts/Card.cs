@@ -163,6 +163,7 @@ public class Card : MonoBehaviour
         ScoreManage.OnCheckCard += BindAllCard;
         ScoreManage.OnAnimateCard += CheckAndBindCard;
         OnEndAnimate += UnBindAllCard;
+        ScoreManage.OnClearStage += ClearStage;
     }
     void OnDisable()
     {
@@ -170,6 +171,7 @@ public class Card : MonoBehaviour
         ScoreManage.OnCheckCard -= BindAllCard;
         ScoreManage.OnAnimateCard -= CheckAndBindCard;
         OnEndAnimate -= UnBindAllCard;
+        ScoreManage.OnClearStage -= ClearStage;
     }
     void ResetValues()
     {
@@ -208,5 +210,10 @@ public class Card : MonoBehaviour
                 StartCoroutine(DoFlipCard()); // 다시 뒤집힘
             }
         }
+    }
+    void ClearStage()
+    {
+        cardNum += 16;
+        Destroy(gameObject);
     }
 }

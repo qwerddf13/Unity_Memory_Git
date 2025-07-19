@@ -7,10 +7,11 @@ public class DeckManage : MonoBehaviour
 {
     public List<int> startDeck = new List<int>{1,1,2,2,3,3,4,4};
     public List<int> currentDeck;
+    public int deckAmount;
     void Start()
     {
         currentDeck = startDeck;
-        
+        deckAmount = currentDeck.Count;
     }
     void Update()
     {

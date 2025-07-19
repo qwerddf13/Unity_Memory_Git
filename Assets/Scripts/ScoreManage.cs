@@ -7,13 +7,14 @@ using UnityEngine.UIElements;
 
 public class ScoreManage : MonoBehaviour
 {
-    public int maxSelect, score;
+    public int maxSelect, score, targetScore;
     public List<int> selectedCardNum;
     public bool isMatched_Score;
     void Start()
     {
         maxSelect = 2;
         score = 0;
+        targetScore = 4;
         selectedCardNum = new List<int>();
     }
     void Update()
@@ -64,13 +65,30 @@ public class ScoreManage : MonoBehaviour
     public static event Action<bool> OnCheckCard;
     public static event Action<bool> OnAnimateCard;
     public static event Action OnPlusScore;
+    public static event Action OnClearStage;
     void OnEnable()
     {
         GameManage.OnResetAll += ResetValues;
+        Card.OnEndAnimate += DoClearStage;
+        OnClearStage += ClearStage;
     }
     void OnDisable()
     {
         GameManage.OnResetAll -= ResetValues;
+        Card.OnEndAnimate -= DoClearStage;
+        OnClearStage -= ClearStage;
+    }
+    void DoClearStage()
+    {
+        if (score >= targetScore)
+        {
+            OnClearStage?.Invoke();
+        }
+    }
+    void ClearStage()
+    {
+        score = 0;
+        selectedCardNum.Clear();
     }
     void ResetValues()
     {
