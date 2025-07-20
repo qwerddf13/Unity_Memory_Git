@@ -163,7 +163,7 @@ public class Card : MonoBehaviour
         ScoreManage.OnCheckCard += BindAllCard;
         ScoreManage.OnAnimateCard += CheckAndBindCard;
         OnEndAnimate += UnBindAllCard;
-        ScoreManage.OnClearStage += ClearStage;
+        StageManage.OnClearStage += ClearStage;
     }
     void OnDisable()
     {
@@ -171,7 +171,7 @@ public class Card : MonoBehaviour
         ScoreManage.OnCheckCard -= BindAllCard;
         ScoreManage.OnAnimateCard -= CheckAndBindCard;
         OnEndAnimate -= UnBindAllCard;
-        ScoreManage.OnClearStage -= ClearStage;
+        StageManage.OnClearStage -= ClearStage;
     }
     void ResetValues()
     {
@@ -214,6 +214,16 @@ public class Card : MonoBehaviour
     void ClearStage()
     {
         cardNum += 16;
+        myGridNum_x = (cardNum - 1) % 4;
+        myGridNum_y = (cardNum - 1) / 4;
+        StartCoroutine(DelayAndDestroy());
+    }
+    IEnumerator DelayAndDestroy()
+    {
+        yield return new WaitForSeconds(1);
+
         Destroy(gameObject);
+
+        yield break;
     }
 }

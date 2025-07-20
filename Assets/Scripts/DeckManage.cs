@@ -12,14 +12,27 @@ public class DeckManage : MonoBehaviour
     {
         currentDeck = startDeck;
         deckAmount = currentDeck.Count;
+        OnMakeCards?.Invoke(currentDeck);
     }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            Debug.Log("덱 생성 신호 보냄");
-            OnMakeCards?.Invoke(currentDeck);
+            RaiseMakeCard();
         }
+    }
+    void OnEnable()
+    {
+        GameManage.OnStartStage += RaiseMakeCard;
+    }
+    void OnDisable()
+    {
+        GameManage.OnStartStage -= RaiseMakeCard;
+    }
+    void RaiseMakeCard()
+    {
+        Debug.Log("덱 생성 신호 보냄");
+        OnMakeCards?.Invoke(currentDeck);
     }
     public static event Action<List<int>> OnMakeCards;
 }

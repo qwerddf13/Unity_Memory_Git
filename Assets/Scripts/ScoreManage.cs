@@ -65,25 +65,15 @@ public class ScoreManage : MonoBehaviour
     public static event Action<bool> OnCheckCard;
     public static event Action<bool> OnAnimateCard;
     public static event Action OnPlusScore;
-    public static event Action OnClearStage;
     void OnEnable()
     {
         GameManage.OnResetAll += ResetValues;
-        Card.OnEndAnimate += DoClearStage;
-        OnClearStage += ClearStage;
+        StageManage.OnClearStage += ClearStage;
     }
     void OnDisable()
     {
         GameManage.OnResetAll -= ResetValues;
-        Card.OnEndAnimate -= DoClearStage;
-        OnClearStage -= ClearStage;
-    }
-    void DoClearStage()
-    {
-        if (score >= targetScore)
-        {
-            OnClearStage?.Invoke();
-        }
+        StageManage.OnClearStage -= ClearStage;
     }
     void ClearStage()
     {

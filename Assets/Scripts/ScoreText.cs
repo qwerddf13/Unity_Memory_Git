@@ -24,14 +24,14 @@ public class ScoreText : MonoBehaviour
     {
         GameManage.OnResetAll += ResetValues;
         ScoreManage.OnPlusScore += WriteScore;
-        ScoreManage.OnClearStage += ClearStage;
+        StageManage.OnClearStage += ClearStage;
     }
 
     void OnDisable()
     {
         GameManage.OnResetAll -= ResetValues;
         ScoreManage.OnPlusScore -= WriteScore;
-        ScoreManage.OnClearStage -= ClearStage;
+        StageManage.OnClearStage -= ClearStage;
     }
 
     void WriteScore()

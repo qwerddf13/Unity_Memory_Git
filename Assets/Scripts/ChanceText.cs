@@ -28,7 +28,7 @@ public class ChanceScript : MonoBehaviour
         Card.OnCardClicked += LoseSmallChance;
         ScoreManage.OnCheckCard += LoseBigChance;
         ScoreManage.OnAnimateCard += WriteBigChance;
-        ScoreManage.OnClearStage += ClearStage;
+        StageManage.OnClearStage += ClearStage;
     }
     void OnDisable()
     {
@@ -36,7 +36,7 @@ public class ChanceScript : MonoBehaviour
         Card.OnCardClicked -= LoseSmallChance;
         ScoreManage.OnCheckCard -= LoseBigChance;
         ScoreManage.OnAnimateCard += WriteBigChance;
-        ScoreManage.OnClearStage -= ClearStage;
+        StageManage.OnClearStage -= ClearStage;
     }
     void LoseSmallChance() // 쓸모없음
     {
@@ -56,8 +56,6 @@ public class ChanceScript : MonoBehaviour
     void ClearStage()
     {
         smallChance = 2;
-        bigChance = 4; // 추후에 아이템으로 변경하니 주의
-        chanceText.text = $"Chance: {bigChance}";
     }
 
     void ResetValues()
