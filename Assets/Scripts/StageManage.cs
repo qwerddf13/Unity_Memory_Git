@@ -41,6 +41,7 @@ public class StageManage : MonoBehaviour
     void ClearStage()
     {
         Debug.Log("스테이지 리셋 시작.");
+        
     }
     
 }
