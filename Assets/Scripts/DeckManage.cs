@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class DeckManage : MonoBehaviour
@@ -12,7 +13,6 @@ public class DeckManage : MonoBehaviour
     {
         currentDeck = startDeck;
         deckAmount = currentDeck.Count;
-        OnMakeCards?.Invoke(currentDeck);
     }
     void Update()
     {
@@ -23,11 +23,11 @@ public class DeckManage : MonoBehaviour
     }
     void OnEnable()
     {
-        GameManage.OnStartStage += RaiseMakeCard;
+        StageManage.OnStartStage += RaiseMakeCard;
     }
     void OnDisable()
     {
-        GameManage.OnStartStage -= RaiseMakeCard;
+        StageManage.OnStartStage -= RaiseMakeCard;
     }
     void RaiseMakeCard()
     {

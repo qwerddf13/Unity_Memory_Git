@@ -10,22 +10,32 @@ public class StageManage : MonoBehaviour
     void Start()
     {
         targetScore = 4;
+        OnStartStage?.Invoke();
     }
 
     void Update()
     {
 
     }
+
+    public static event Action OnStartStage;
     public static event Action OnClearStage;
 
     void OnEnable()
     {
+        ButtonAction.OnNextStage += StartStage;
         ScoreManage.OnPlusScore += TryClearStage;
     }
 
     void OnDisable()
     {
+        ButtonAction.OnNextStage -= StartStage;
         ScoreManage.OnPlusScore -= TryClearStage;
+    }
+
+    void StartStage()
+    {
+        OnStartStage?.Invoke();
     }
 
     void TryClearStage()
@@ -41,7 +51,6 @@ public class StageManage : MonoBehaviour
     void ClearStage()
     {
         Debug.Log("스테이지 리셋 시작.");
-        
     }
     
 }

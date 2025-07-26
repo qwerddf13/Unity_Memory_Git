@@ -367,6 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df743206cdc0b2c4b8b8f224fa4ac7d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Button_nextStage: {fileID: 965374611}
 --- !u!4 &339482872
 Transform:
   m_ObjectHideFlags: 0
@@ -903,7 +904,7 @@ GameObject:
   - component: {fileID: 965374614}
   - component: {fileID: 965374613}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Button_nextStage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

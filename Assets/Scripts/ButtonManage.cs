@@ -7,7 +7,7 @@ public class ButtonManage : MonoBehaviour
     public GameObject Button_nextStage;
     void Start()
     {
-
+        Button_nextStage.SetActive(false);
     }
 
     
@@ -37,7 +37,8 @@ public class ButtonManage : MonoBehaviour
         yield return new WaitUntil(CheckCardExist);
 
         Button_nextStage.SetActive(true);
-        Debug.Log("다음 스테이지 버튼 나타내기 시도");
+
+        Debug.Log("다음 스테이지 버튼 나타냄");
     }
 
     bool CheckCardExist()
