@@ -24,12 +24,14 @@ public class ObjectMaker : MonoBehaviour
     void OnEnable()
     {
         GameManage.OnResetAll += ResetValues;
+        StageManage.OnStartStage += ResetValues;
         DeckManage.OnMakeCards += DoCoroutine;
     }
 
     void OnDisable()
     {
         GameManage.OnResetAll -= ResetValues;
+        StageManage.OnStartStage -= ResetValues;
         DeckManage.OnMakeCards -= DoCoroutine;
     }
     void DoCoroutine(List<int> forDoList)
