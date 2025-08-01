@@ -8,6 +8,7 @@ public class ObjectMaker : MonoBehaviour
 {
     public int test;
     [SerializeField] private GameObject cardPrefab;
+    public Transform canvas;
     public int toSetCardNum = 0;
     public int allCardAmount = 0;
     public int spawnSpriteNum = 1;
@@ -24,14 +25,14 @@ public class ObjectMaker : MonoBehaviour
     void OnEnable()
     {
         GameManage.OnResetAll += ResetValues;
-        StageManage.OnStartStage += ResetValues;
+        StageManage.OnResetAll += ResetValues;
         DeckManage.OnMakeCards += DoCoroutine;
     }
 
     void OnDisable()
     {
         GameManage.OnResetAll -= ResetValues;
-        StageManage.OnStartStage -= ResetValues;
+        StageManage.OnResetAll -= ResetValues;
         DeckManage.OnMakeCards -= DoCoroutine;
     }
     void DoCoroutine(List<int> forDoList)

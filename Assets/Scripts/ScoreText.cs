@@ -23,7 +23,7 @@ public class ScoreText : MonoBehaviour
     void OnEnable()
     {
         GameManage.OnResetAll += ResetValues;
-        StageManage.OnStartStage += ResetValues;
+        StageManage.OnResetAll += ResetValues;
         ScoreManage.OnPlusScore += WriteScore;
         StageManage.OnClearStage += ClearStage;
     }
@@ -31,7 +31,7 @@ public class ScoreText : MonoBehaviour
     void OnDisable()
     {
         GameManage.OnResetAll -= ResetValues;
-        StageManage.OnStartStage -= ResetValues;
+        StageManage.OnResetAll -= ResetValues;
         ScoreManage.OnPlusScore -= WriteScore;
         StageManage.OnClearStage -= ClearStage;
     }

@@ -68,13 +68,13 @@ public class ScoreManage : MonoBehaviour
     void OnEnable()
     {
         GameManage.OnResetAll += ResetValues;
-        StageManage.OnStartStage += ResetValues;
+        StageManage.OnResetAll += ResetValues;
         StageManage.OnClearStage += ClearStage;
     }
     void OnDisable()
     {
         GameManage.OnResetAll -= ResetValues;
-        StageManage.OnStartStage -= ResetValues;
+        StageManage.OnResetAll -= ResetValues;
         StageManage.OnClearStage -= ClearStage;
     }
     void ClearStage()

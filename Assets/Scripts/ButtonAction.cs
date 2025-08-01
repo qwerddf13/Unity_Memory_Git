@@ -24,4 +24,4 @@ public class ButtonAction : MonoBehaviour
     }
     public static event Action OnNextStage;
 }
-// 스테이지 완료 후 일부 변수 리셋하기
+// 카드를 UI캔버스로 옮기고 그에 따라 코드 수정하기

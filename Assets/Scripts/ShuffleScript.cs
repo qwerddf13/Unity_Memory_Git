@@ -51,16 +51,11 @@ public class ShuffleScript : MonoBehaviour
     }
     void OnEnable()
     {
-        GameManage.OnResetAll += ResetValues;
+
     }
 
     void OnDisable()
     {
-        GameManage.OnResetAll -= ResetValues;
-    }
 
-    void ResetValues()
-    {
-        Debug.Log("Shuffle 리셋 사항 없음");
     }
 }

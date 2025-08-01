@@ -25,7 +25,7 @@ public class ChanceScript : MonoBehaviour
     void OnEnable()
     {
         GameManage.OnResetAll += ResetValues;
-        StageManage.OnStartStage += ResetValues;
+        StageManage.OnResetAll += ResetValues;
         Card.OnCardClicked += LoseSmallChance;
         ScoreManage.OnCheckCard += LoseBigChance;
         ScoreManage.OnAnimateCard += WriteBigChance;
@@ -34,7 +34,7 @@ public class ChanceScript : MonoBehaviour
     void OnDisable()
     {
         GameManage.OnResetAll -= ResetValues;
-        StageManage.OnStartStage -= ResetValues;
+        StageManage.OnResetAll -= ResetValues;
         Card.OnCardClicked -= LoseSmallChance;
         ScoreManage.OnCheckCard -= LoseBigChance;
         ScoreManage.OnAnimateCard += WriteBigChance;
