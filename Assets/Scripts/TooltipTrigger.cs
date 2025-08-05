@@ -6,31 +6,19 @@ using UnityEngine.UIElements;
 
 public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    static LTDescr delay;
     public string header;
 
     [Multiline()]
     public string content;
 
-    public Vector2 pos;
-    public float paddingY;
-
-    void Awake()
-    {
-        pos = transform.position;
-    }
-
-
     public void OnPointerEnter(PointerEventData eventData)
     {
-        pos = transform.position;
-        TooltipSystem.Show(pos, paddingY, content, header);
+        TooltipSystem.Show(content, header);
     }
 
     void OnMouseOver()
     {
-        pos = transform.position;
-        TooltipSystem.Show(pos, paddingY, content, header);
+        TooltipSystem.Show(content, header);
     }
 
     public void OnPointerExit(PointerEventData eventData)

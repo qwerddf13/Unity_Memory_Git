@@ -13,10 +13,9 @@ public class TooltipSystem : MonoBehaviour
         current = this;
     }
 
-    public static void Show(Vector2 pos, float paddingY, string content, string header = "")
+    public static void Show(string content, string header = "")
     {
         current.tooltip.SetText(content, header);
-        current.tooltip.SetPosition(pos, paddingY);
         current.tooltip.gameObject.SetActive(true);
     }
 

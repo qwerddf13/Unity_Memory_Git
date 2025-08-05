@@ -63,7 +63,7 @@ public class Card : MonoBehaviour
     {
         if (isCanClick == true)
         {
-            transform.localScale = new Vector2(awakeScale.x + 1, awakeScale.y + 1);
+            transform.localScale = new Vector2(awakeScale.x * 1.2f, awakeScale.y * 1.2f);
         }
     }
     void OnMouseDown()
@@ -122,11 +122,12 @@ public class Card : MonoBehaviour
     }
     IEnumerator DoFlipCard()
     {
+        float scaleDelta = awakeScale.x * 0.1f;
         BeforeFlipCard();
-        for (int i = 0; i < 9; i++)
+        for (int i = 0; i < 10; i++)
         {
             yield return new WaitForSeconds(0.02f);
-            transform.localScale = new Vector2(transform.localScale.x - 1, transform.localScale.y);
+            transform.localScale = new Vector2(transform.localScale.x - scaleDelta, transform.localScale.y);
         }
 
         if (spriteRenderer.sprite == sprites[0])
@@ -138,10 +139,10 @@ public class Card : MonoBehaviour
             spriteRenderer.sprite = sprites[0];
         }
 
-        for (int i = 0; i < 9; i++)
+        for (int i = 0; i < 10; i++)
         {
             yield return new WaitForSeconds(0.02f);
-            transform.localScale = new Vector2(transform.localScale.x + 1, transform.localScale.y);
+            transform.localScale = new Vector2(transform.localScale.x + scaleDelta, transform.localScale.y);
         }
 
         yield return new WaitForSeconds(0.02f);

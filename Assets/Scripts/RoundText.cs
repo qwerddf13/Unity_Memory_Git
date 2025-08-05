@@ -34,6 +34,6 @@ public class RoundText : MonoBehaviour
     {
         round = stageManage.round;
         stage = stageManage.stage;
-        roundText.text = $"Round: {round}/{maxRound}\nStage: {stage}/{maxStage}";
+        roundText.text = $"라운드: {round}/{maxRound}\n스테이지: {stage}/{maxStage}";
     }
 }

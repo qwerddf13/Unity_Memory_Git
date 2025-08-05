@@ -9,6 +9,7 @@ public class ChanceScript : MonoBehaviour
 {
     public TMP_Text chanceText;
     public ScoreManage scoreManage;
+    public Animator animator;
     public int bigChance, smallChance;
     public int maxSelect2;
 
@@ -49,11 +50,12 @@ public class ChanceScript : MonoBehaviour
         if (isPair == false)
         {
             bigChance--;
+            animator.SetTrigger("UseChance");
         }
     }
     void WriteBigChance(bool _)
     {
-        chanceText.text = $"Chance: {bigChance}";
+        chanceText.text = $"기회: {bigChance}";
     }
     void ClearStage()
     {
@@ -65,7 +67,7 @@ public class ChanceScript : MonoBehaviour
         maxSelect2 = scoreManage.maxSelect;
         bigChance = 4;
         smallChance = maxSelect2;
-        chanceText.text = $"Chance: {bigChance}";
+        chanceText.text = $"기회: {bigChance}";
         Debug.Log("Chance 텍스트 리셋됨.");
     }
 }
