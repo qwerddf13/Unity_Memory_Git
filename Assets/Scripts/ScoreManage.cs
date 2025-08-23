@@ -51,6 +51,7 @@ public class ScoreManage : MonoBehaviour
     }
     void AnimateCard()
     {
+        OnEndCheck?.Invoke();
         if (isMatched_Score == true)
         {
             OnAnimateCard?.Invoke(true);
@@ -65,6 +66,7 @@ public class ScoreManage : MonoBehaviour
     public static event Action<bool> OnCheckCard;
     public static event Action<bool> OnAnimateCard;
     public static event Action OnPlusScore;
+    public static event Action OnEndCheck;
     void OnEnable()
     {
         GameManage.OnResetAll += ResetValues;

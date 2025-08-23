@@ -8,9 +8,9 @@ using UnityEngine.UIElements;
 
 public class Card : MonoBehaviour
 {
-    [SerializeField] SpriteRenderer spriteRenderer;
-    [SerializeField] GameObject spawner;
-    public ScoreManage scoreManage;
+    public SpriteRenderer spriteRenderer;
+    GameObject gameManager;
+    GameObject objectSpawner;
 
     public int cardNum, cardSpriteNum, allCardAmount;
     public int myGridNum_x = 0; // 0 - 3
@@ -29,11 +29,10 @@ public class Card : MonoBehaviour
         transform.position = transform.position;
         transform.localScale = transform.localScale;
 
-        spawner = GameObject.Find("ObjectSpawner");
-        cardNum = spawner.GetComponent<ObjectMaker>().toSetCardNum;
-        cardSpriteNum = spawner.GetComponent<ObjectMaker>().spawnSpriteNum;
-
-        scoreManage = GameObject.Find("GameManager").GetComponent<ScoreManage>();
+        objectSpawner = GameObject.Find("ObjectSpawner");
+        gameManager = GameObject.Find("GameManager");
+        cardNum = objectSpawner.GetComponent<ObjectMaker>().toSetCardNum;
+        cardSpriteNum = objectSpawner.GetComponent<ObjectMaker>().spawnSpriteNum;
 
         myGridNum_x = (cardNum - 1) % 4;
         myGridNum_y = (cardNum - 1) / 4;
@@ -52,7 +51,7 @@ public class Card : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightShift))
         {
-            shuffledList = GameObject.Find("CardShufflerOb").GetComponent<ShuffleScript>().shuffledList;
+            shuffledList = gameManager.GetComponent<ShuffleScript>().shuffledList;
             cardNum = shuffledList[cardNum - 1];
             myGridNum_x = (cardNum - 1) % 4;
             myGridNum_y = (cardNum - 1) / 4;
@@ -63,7 +62,7 @@ public class Card : MonoBehaviour
     {
         if (isCanClick == true)
         {
-            transform.localScale = new Vector2(awakeScale.x * 1.2f, awakeScale.y * 1.2f);
+            transform.localScale = new Vector2(awakeScale.x * 1.1f, awakeScale.y * 1.1f);
         }
     }
     void OnMouseDown()
@@ -92,7 +91,7 @@ public class Card : MonoBehaviour
     }
     void SortCard()
     {
-        allCardAmount = spawner.GetComponent<ObjectMaker>().allCardAmount;
+        allCardAmount = objectSpawner.GetComponent<ObjectMaker>().allCardAmount;
         lastRow = (allCardAmount - 1) / 4;
         lastRowAmount = allCardAmount % 4;
         if (myGridNum_y >= lastRow && lastRowAmount > 0)
@@ -117,14 +116,25 @@ public class Card : MonoBehaviour
         {
             isCanClick = false;
             OnCardClicked?.Invoke();
-            scoreManage.ReceiveSelectedCardNum(cardSpriteNum);
+            gameManager.GetComponent<ScoreManage>().ReceiveSelectedCardNum(cardSpriteNum);
         }
     }
+    void AfterFlipCard()
+    {
+        if (isFlipedOpen == false)
+        {
+            OnEndAnimate?.Invoke();
+        }
+        transform.localScale = awakeScale;
+    }
+
     IEnumerator DoFlipCard()
     {
-        float scaleDelta = awakeScale.x * 0.1f;
+        float scaleDelta = awakeScale.x * 0.2f;
+        
         BeforeFlipCard();
-        for (int i = 0; i < 10; i++)
+
+        for (int i = 0; i < 5; i++)
         {
             yield return new WaitForSeconds(0.02f);
             transform.localScale = new Vector2(transform.localScale.x - scaleDelta, transform.localScale.y);
@@ -139,20 +149,15 @@ public class Card : MonoBehaviour
             spriteRenderer.sprite = sprites[0];
         }
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 5; i++)
         {
             yield return new WaitForSeconds(0.02f);
             transform.localScale = new Vector2(transform.localScale.x + scaleDelta, transform.localScale.y);
         }
 
-        yield return new WaitForSeconds(0.02f);
-        transform.localScale = new Vector2(awakeScale.x, awakeScale.y);
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.5f);
 
-        if (isFlipedOpen == false)
-        {
-            OnEndAnimate?.Invoke();
-        }
+        AfterFlipCard();
 
         yield break;
     }
@@ -185,6 +190,8 @@ public class Card : MonoBehaviour
     }
     void UnBindAllCard()
     {
+        transform.localScale = new Vector2(awakeScale.x, awakeScale.y);
+
         if (isFlipedOpen == false) // 내가 뒷면이면
         {
             isCanClick = true; // 클릭 가능

@@ -11,18 +11,22 @@ public class ChanceScript : MonoBehaviour
     public ScoreManage scoreManage;
     public Animator animator;
     public int bigChance, smallChance;
-    public int maxSelect2;
+    public int maxSelect2; // 변수 정리 좀 해라
+    bool isBigChanceUsed;
 
     void Start()
     {
         smallChance = 2; // 쓸모없음
         bigChance = 4;
+        isBigChanceUsed = false;
         maxSelect2 = scoreManage.maxSelect;
     }
+
     void Update()
     {
         
     }
+
     void OnEnable()
     {
         GameManage.OnResetAll += ResetValues;
@@ -32,6 +36,7 @@ public class ChanceScript : MonoBehaviour
         ScoreManage.OnAnimateCard += WriteBigChance;
         StageManage.OnClearStage += ClearStage;
     }
+
     void OnDisable()
     {
         GameManage.OnResetAll -= ResetValues;
@@ -41,22 +46,36 @@ public class ChanceScript : MonoBehaviour
         ScoreManage.OnAnimateCard += WriteBigChance;
         StageManage.OnClearStage -= ClearStage;
     }
+
     void LoseSmallChance() // 쓸모없음
     {
         smallChance--;
     }
+
     void LoseBigChance(bool isPair)
     {
         if (isPair == false)
         {
             bigChance--;
-            animator.SetTrigger("UseChance");
+            isBigChanceUsed = true;
         }
     }
+
     void WriteBigChance(bool _)
     {
         chanceText.text = $"기회: {bigChance}";
+        if (isBigChanceUsed == true)
+        {
+            AnimateBox();
+        }
     }
+
+    public void AnimateBox()
+    {
+        animator.SetTrigger("UseChance");
+        isBigChanceUsed = false;
+    }
+
     void ClearStage()
     {
         smallChance = 2;

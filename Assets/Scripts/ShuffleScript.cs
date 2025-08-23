@@ -6,6 +6,7 @@ using UnityEngine;
 public class ShuffleScript : MonoBehaviour
 {
     public List<int> shuffledList;
+    public ObjectMaker objectMaker;
     // Start is called before the first frame update
     void Start()
     {

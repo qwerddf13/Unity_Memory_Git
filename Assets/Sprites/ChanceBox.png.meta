@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c8dea1a18c985044ca67a0b37c5b993d
+guid: 77bf462b2ed100d44a42e07ff22da579
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,7 +123,448 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ChanceBox_0
+      name: ChanceBox 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 257b415de9bd7194b9d443987c3c430d
+      internalID: -244527372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d80b810e9b12a54397f5985e5f5a75d
+      internalID: 1067418943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66a2a87d654cec443b8b48c743eecdbc
+      internalID: -1242986213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac303e8d0294b9b46abb63532a47e5a0
+      internalID: -6206194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 894649f652f737a46aa51dfcbbc734dd
+      internalID: -1469848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7363b286d69c8a84a98bc8420061e51e
+      internalID: 133824996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 640
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 205c24863df530c4b87154f656134953
+      internalID: -716923837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36ee1dd3c8be80548b76f9d22264debe
+      internalID: -200616983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54d64389012093244a06099329976365
+      internalID: 1442636727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_9
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d60b8e737abe72e49931b24c691c6767
+      internalID: -372592875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_10
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cb6255ad0d16664283497ab58ff6ac7
+      internalID: 228920707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_11
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22dc32cc473fc214586ddf16243e0ebe
+      internalID: -1507951467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_12
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6b603cd1c2c6514f9d2c98d466d6be8
+      internalID: 906728874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_13
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ebffec5adc954f4eb8761488340ddef
+      internalID: 697509833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d930c577e619ff488b66c15026aea02
+      internalID: 2087008286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_15
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e15457adf3658134fb649a9249f5fd8e
+      internalID: -129199354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_16
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6670639b3bf95643b6c75af6fe1fe8c
+      internalID: 1974736249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_17
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 249f8f8be80a8ed4a9dabb1d0753ea35
+      internalID: -119269706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_18
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dc2074658b5ac34bb25b97936b3d9e2
+      internalID: 1867268240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_19
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f46cb2667d87c94397301c0b2683487
+      internalID: -1187158856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_20
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b6eef6d958190742bac9473a2a46d32
+      internalID: 1325294348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_21
       rect:
         serializedVersion: 2
         x: 0
@@ -131,20 +572,20 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c31e03c5e55052469da518bd6df2280
-      internalID: 679219363
+      spriteID: 40d95ece29ce1a344b7fedc3d9ddbbe7
+      internalID: 1591494799
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChanceBox_1
+      name: ChanceBox 1_22
       rect:
         serializedVersion: 2
         x: 128
@@ -152,20 +593,20 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57c2daa5ff34b4b4480914f14de71377
-      internalID: 453930206
+      spriteID: 01e59ee9ed662214bbddb05a1e0b121a
+      internalID: 1111667912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChanceBox_2
+      name: ChanceBox 1_23
       rect:
         serializedVersion: 2
         x: 256
@@ -173,20 +614,20 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca605fada654f9b4da5873a382dc8fe0
-      internalID: -1553714561
+      spriteID: 7226beb829594e544b0c2f7f558dc630
+      internalID: -18066248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChanceBox_3
+      name: ChanceBox 1_24
       rect:
         serializedVersion: 2
         x: 384
@@ -194,20 +635,83 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd48a9effe8ab4e4dba9ffdf67621956
-      internalID: -1580781473
+      spriteID: 8dd26712986d7eb4ba05a92cfc5c965a
+      internalID: -1609080495
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChanceBox_4
+      name: ChanceBox 1_25
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29ef085019ba6d84fa06332b550c1500
+      internalID: 1264425733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_26
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88ee3d1899177ac40a3671be67194672
+      internalID: -603812081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_27
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a56ff65cdf9628e41864bcd26deea13b
+      internalID: 285201388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_28
       rect:
         serializedVersion: 2
         x: 0
@@ -215,20 +719,20 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb3bf2c3d6687c445af9630de023453b
-      internalID: -1354998259
+      spriteID: 3d9aff851b952cc43847c788f5e84c82
+      internalID: -1123384010
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChanceBox_5
+      name: ChanceBox 1_29
       rect:
         serializedVersion: 2
         x: 128
@@ -236,20 +740,20 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4e277a00847d12408e44f660999ad22
-      internalID: 1147903660
+      spriteID: 24a0a5584d0a5ca46981ce6ddb1ba852
+      internalID: -256879203
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChanceBox_6
+      name: ChanceBox 1_30
       rect:
         serializedVersion: 2
         x: 256
@@ -257,20 +761,20 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 560273e82d1ef7a4bad57450bfa03e75
-      internalID: -806334921
+      spriteID: 3ff891fd02b77564aadfbf8eb6aefc0b
+      internalID: 65583558
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChanceBox_7
+      name: ChanceBox 1_31
       rect:
         serializedVersion: 2
         x: 384
@@ -278,20 +782,83 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29c58dbb0c36fa441be47c15b72c27a9
-      internalID: -470179572
+      spriteID: 50def75a34225244d85798745449303c
+      internalID: 1013712366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChanceBox_8
+      name: ChanceBox 1_32
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a36e64ef78c88d740a849f7b855c0141
+      internalID: -412539579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_33
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cad1e8cf285ca974db11be04a8f38dd1
+      internalID: 332913877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_34
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7238eef90c4e7664483c54ca4f42f587
+      internalID: 1243010379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_35
       rect:
         serializedVersion: 2
         x: 0
@@ -299,20 +866,20 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7246882b0cf0405489ca7f6522eeea56
-      internalID: -1675003495
+      spriteID: 81c15d799e7bede4f917a51aa7416cca
+      internalID: 1331864800
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChanceBox_9
+      name: ChanceBox 1_36
       rect:
         serializedVersion: 2
         x: 128
@@ -320,20 +887,20 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 636b38a08299ccc41a6173a2e0ec1ae0
-      internalID: 14164413
+      spriteID: 98b6b7e76d48cef43843a57f9bf5abf7
+      internalID: 208072653
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChanceBox_10
+      name: ChanceBox 1_37
       rect:
         serializedVersion: 2
         x: 256
@@ -341,14 +908,35 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ac5aeb2bfdab4d45ae5147b1919f463
-      internalID: -351471141
+      spriteID: 926bd9b09de947941b62685ccbb0b62c
+      internalID: -336711499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChanceBox 1_38
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08de185395ccb274199d7b9e30ad6246
+      internalID: -1767887097
       vertices: []
       indices: 
       edges: []
@@ -364,17 +952,45 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ChanceBox_0: 679219363
-      ChanceBox_1: 453930206
-      ChanceBox_10: -351471141
-      ChanceBox_2: -1553714561
-      ChanceBox_3: -1580781473
-      ChanceBox_4: -1354998259
-      ChanceBox_5: 1147903660
-      ChanceBox_6: -806334921
-      ChanceBox_7: -470179572
-      ChanceBox_8: -1675003495
-      ChanceBox_9: 14164413
+      ChanceBox 1_0: -244527372
+      ChanceBox 1_1: 1067418943
+      ChanceBox 1_10: 228920707
+      ChanceBox 1_11: -1507951467
+      ChanceBox 1_12: 906728874
+      ChanceBox 1_13: 697509833
+      ChanceBox 1_14: 2087008286
+      ChanceBox 1_15: -129199354
+      ChanceBox 1_16: 1974736249
+      ChanceBox 1_17: -119269706
+      ChanceBox 1_18: 1867268240
+      ChanceBox 1_19: -1187158856
+      ChanceBox 1_2: -1242986213
+      ChanceBox 1_20: 1325294348
+      ChanceBox 1_21: 1591494799
+      ChanceBox 1_22: 1111667912
+      ChanceBox 1_23: -18066248
+      ChanceBox 1_24: -1609080495
+      ChanceBox 1_25: 1264425733
+      ChanceBox 1_26: -603812081
+      ChanceBox 1_27: 285201388
+      ChanceBox 1_28: -1123384010
+      ChanceBox 1_29: -256879203
+      ChanceBox 1_3: -6206194
+      ChanceBox 1_30: 65583558
+      ChanceBox 1_31: 1013712366
+      ChanceBox 1_32: -412539579
+      ChanceBox 1_33: 332913877
+      ChanceBox 1_34: 1243010379
+      ChanceBox 1_35: 1331864800
+      ChanceBox 1_36: 208072653
+      ChanceBox 1_37: -336711499
+      ChanceBox 1_38: -1767887097
+      ChanceBox 1_4: -1469848
+      ChanceBox 1_5: 133824996
+      ChanceBox 1_6: -716923837
+      ChanceBox 1_7: -200616983
+      ChanceBox 1_8: 1442636727
+      ChanceBox 1_9: -372592875
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
