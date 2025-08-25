@@ -22,12 +22,12 @@ public class RoundText : MonoBehaviour
 
     void OnEnable()
     {
-        StageManage.OnClearStage += WriteRoundAndStage;
+        ButtonAction.OnNextStage += WriteRoundAndStage;
     }
 
     void OnDisable()
     {
-        StageManage.OnClearStage -= WriteRoundAndStage;
+        ButtonAction.OnNextStage -= WriteRoundAndStage;
     }
 
     void WriteRoundAndStage()

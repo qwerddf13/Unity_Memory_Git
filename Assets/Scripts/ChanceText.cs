@@ -57,6 +57,7 @@ public class ChanceScript : MonoBehaviour
         if (isPair == false)
         {
             bigChance--;
+            animator.SetInteger("Remain", bigChance);
             isBigChanceUsed = true;
         }
     }
@@ -85,6 +86,7 @@ public class ChanceScript : MonoBehaviour
     {
         maxSelect2 = scoreManage.maxSelect;
         bigChance = 4;
+        animator.SetInteger("Remain", bigChance);
         smallChance = maxSelect2;
         chanceText.text = $"기회: {bigChance}";
         Debug.Log("Chance 텍스트 리셋됨.");

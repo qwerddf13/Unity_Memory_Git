@@ -106,6 +106,7 @@ public class Card : MonoBehaviour
     void BeforeFlipCard()
     {
         isCanClick = false;
+        transform.localScale = awakeScale;
 
         if (isFlipedOpen == true)
             isFlipedOpen = false;
@@ -125,7 +126,6 @@ public class Card : MonoBehaviour
         {
             OnEndAnimate?.Invoke();
         }
-        transform.localScale = awakeScale;
     }
 
     IEnumerator DoFlipCard()
