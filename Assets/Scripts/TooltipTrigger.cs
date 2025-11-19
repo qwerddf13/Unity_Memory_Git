@@ -6,10 +6,21 @@ using UnityEngine.UIElements;
 
 public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    public Items itemScriptable;
+
     public string header;
 
     [Multiline()]
     public string content;
+
+    public void Start()
+    {
+        if (itemScriptable != null)
+        {
+            header = itemScriptable.itemName;
+            content = itemScriptable.description;
+        }
+    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
