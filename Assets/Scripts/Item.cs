@@ -1,21 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class Item : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
     public Items[] items;
+    public int itemNum;
     public TooltipTrigger tooltipTrigger;
 
     Vector2 startScale;
 
     void Awake()
     {
-        if (spriteRenderer != null)
-            spriteRenderer.sprite = items[0].sprite;
+        spriteRenderer.sprite = items[itemNum].sprite;
         
-        tooltipTrigger.itemScriptable = items[0];
+        tooltipTrigger.itemScriptable = items[itemNum];
     }
     
     void Start()
@@ -25,7 +26,9 @@ public class Item : MonoBehaviour
 
     void Update()
     {
+        spriteRenderer.sprite = items[itemNum].sprite;
         
+        tooltipTrigger.itemScriptable = items[itemNum];
     }
 
     void OnMouseOver()
