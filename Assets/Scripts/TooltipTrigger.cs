@@ -24,11 +24,23 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (itemScriptable != null)
+        {
+            header = itemScriptable.itemName;
+            content = itemScriptable.description;
+        }
+
         TooltipSystem.Show(content, header);
     }
 
     void OnMouseOver()
     {
+        if (itemScriptable != null)
+        {
+            header = itemScriptable.itemName;
+            content = itemScriptable.description;
+        }
+        
         TooltipSystem.Show(content, header);
     }
 

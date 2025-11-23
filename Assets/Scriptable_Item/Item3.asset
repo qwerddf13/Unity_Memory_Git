@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Item3
   m_EditorClassIdentifier: 
   sprite: {fileID: -1850412161, guid: 95c0e42397354154cae2f23cef4188de, type: 3}
+  isItemActive: 1
   itemName: "\uBD89\uC740 \uB3C4\uC7A5"
-  description: "\uD68D\uB4DD \uC2DC \uCE74\uB4DC \uD55C \uC7A5\uC5D0 \uBD89\uC740\uC0C9\uC744
+  description: "\uC0AC\uC6A9 \uC2DC: \uCE74\uB4DC \uD55C \uC7A5\uC5D0 \uBD89\uC740\uC0C9\uC744
     \uD45C\uC2DC\uD569\uB2C8\uB2E4"

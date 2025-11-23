@@ -1,0 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ChanceEffect : ItemEffects // 아직 효과가 직렬화 안 됨!!!!! 나중에 꼭 봐라
+{
+    public int chanceAmount;
+
+    public override void Execute(GameObject user)
+    {
+        var chance = user.GetComponent<ChanceScript>();
+        chance.bigChance += chanceAmount;
+    }
+}

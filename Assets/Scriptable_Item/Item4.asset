@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56bb7c1aeab65ef48aff1067c794b7e9, type: 3}
-  m_Name: Item1
+  m_Name: Item4
   m_EditorClassIdentifier: 
-  sprite: {fileID: -1519540393, guid: 95c0e42397354154cae2f23cef4188de, type: 3}
-  itemName: "\uC9C4\uD1B5\uC81C"
-  description: "\uC0AC\uC6A9 \uC2DC: \uAE30\uD68C\uB97C +1 \uC5BB\uC2B5\uB2C8\uB2E4\n\uBAA8\uB4E0
-    \uCE74\uB4DC\uB97C \uC11E\uC2B5\uB2C8\uB2E4"
+  sprite: {fileID: 1697054053, guid: 95c0e42397354154cae2f23cef4188de, type: 3}
+  isItemActive: 1
+  itemName: "\uD478\uB978 \uB3C4\uC7A5"
+  description: "\uC0AC\uC6A9 \uC2DC: \uCE74\uB4DC \uD55C \uC7A5\uC5D0 \uD478\uB978\uC0C9\uC744
+    \uD45C\uC2DC\uD569\uB2C8\uB2E4"
