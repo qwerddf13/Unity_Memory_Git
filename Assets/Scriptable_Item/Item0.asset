@@ -17,3 +17,5 @@ MonoBehaviour:
   itemName: "\uBE48 \uCE74\uB4DC"
   description: "\uC2A4\uD14C\uC774\uC9C0 \uC885\uB8CC \uC2DC\uB9C8\uB2E4 \uC810\uC218\uB97C
     +1 \uC5BB\uC2B5\uB2C8\uB2E4"
+  effects:
+  - {fileID: 0}

@@ -9,6 +9,8 @@ public class Item : MonoBehaviour
     public Items[] items;
     public int itemNum;
     public TooltipTrigger tooltipTrigger;
+    [SerializeField] GameObject buttonContainer;
+    [SerializeField] RectTransform buttonContainerRect;
 
     Vector2 startScale;
 
@@ -39,5 +41,25 @@ public class Item : MonoBehaviour
     void OnMouseExit()
     {
         transform.localScale = startScale;
+    }
+
+    void OnMouseUpAsButton()
+    {
+        if (buttonContainer.activeSelf == false)
+        {
+            ItemWorldPosToCanvasPos();
+            buttonContainer.SetActive(true);
+        }
+        else
+        {
+            buttonContainer.SetActive(false);
+        }
+    }
+
+    void ItemWorldPosToCanvasPos()
+    {
+        Vector2 worldPos = transform.position; 
+        Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(Camera.main, worldPos);
+        buttonContainerRect.position = screenPoint;
     }
 }
