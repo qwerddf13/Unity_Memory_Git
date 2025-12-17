@@ -7,9 +7,9 @@ public class ChanceEffect : ItemEffects // 아직 효과가 직렬화 안 됨!!!
 {
     public int chanceAmount;
 
-    public override void Execute(GameObject user)
+    public override void Execute()
     {
-        var chance = user.GetComponent<ChanceScript>();
+        var chance = GameObject.Find("GameManager").GetComponent<ChanceScript>();
         chance.bigChance += chanceAmount;
     }
 }

@@ -18,5 +18,5 @@ MonoBehaviour:
   description: "\uC0AC\uC6A9 \uC2DC: \uAE30\uD68C\uB97C +1 \uC5BB\uC2B5\uB2C8\uB2E4\n\uBAA8\uB4E0
     \uCE74\uB4DC\uB97C \uC11E\uC2B5\uB2C8\uB2E4"
   effects:
-  - {fileID: 11400000, guid: 27d46788558420d4c823a58510541f1e, type: 2}
   - {fileID: 11400000, guid: 3312597220b80b541963b4bdf2a692ec, type: 2}
+  - {fileID: 11400000, guid: 27d46788558420d4c823a58510541f1e, type: 2}

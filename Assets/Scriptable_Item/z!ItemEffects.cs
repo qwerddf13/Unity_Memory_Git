@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class ItemEffects : ScriptableObject// 아직 효과가 직렬화 안 됨!!!!! 나중에 꼭 봐라
 {
-    public abstract void Execute(GameObject user);
+    public abstract void Execute();
 }

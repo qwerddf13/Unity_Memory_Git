@@ -16,9 +16,9 @@ public class Items : ScriptableObject
 
     public ItemEffects[] effects; // 아직 효과가 직렬화 안 됨!!!!! 나중에 꼭 봐라
 
-    public void Use(GameObject user)
+    public void Use()
     {
         foreach (var effect in effects)
-            effect.Execute(user);
+            effect.Execute();
     }
 }

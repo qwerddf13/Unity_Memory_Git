@@ -2,23 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
+
     public Items[] items;
     public int itemNum;
+    Items currItem;
+
     public TooltipTrigger tooltipTrigger;
+
     [SerializeField] GameObject buttonContainer;
     [SerializeField] RectTransform buttonContainerRect;
+    [SerializeField] Button useButton;
+    [SerializeField] Button sellButton;
 
     Vector2 startScale;
 
     void Awake()
     {
-        spriteRenderer.sprite = items[itemNum].sprite;
-        
-        tooltipTrigger.itemScriptable = items[itemNum];
+        currItem = items[itemNum];
+        spriteRenderer.sprite = currItem.sprite;
+        tooltipTrigger.itemScriptable = currItem;
     }
     
     void Start()
@@ -28,9 +35,9 @@ public class Item : MonoBehaviour
 
     void Update()
     {
-        spriteRenderer.sprite = items[itemNum].sprite;
-        
-        tooltipTrigger.itemScriptable = items[itemNum];
+        currItem = items[itemNum];
+        spriteRenderer.sprite = currItem.sprite;
+        tooltipTrigger.itemScriptable = currItem;
     }
 
     void OnMouseOver()
@@ -48,6 +55,16 @@ public class Item : MonoBehaviour
         if (buttonContainer.activeSelf == false)
         {
             ItemWorldPosToCanvasPos();
+
+            if (currItem.isItemActive)
+            {
+                useButton.interactable = true;
+            }
+            else
+            {
+                useButton.interactable = false;
+            }
+
             buttonContainer.SetActive(true);
         }
         else
@@ -61,5 +78,12 @@ public class Item : MonoBehaviour
         Vector2 worldPos = transform.position; 
         Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(Camera.main, worldPos);
         buttonContainerRect.position = screenPoint;
+    }
+
+    public void UseItem()
+    {
+        if (currItem == null) return;
+
+        currItem.Use();
     }
 }
